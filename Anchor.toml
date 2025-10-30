@@ -1,0 +1,22 @@
+[toolchain]
+package_manager = "yarn"
+
+[features]
+resolution = true
+skip-lint = false
+
+[programs.localnet]
+agent_registry = "59Z648TXaaZM7j3RrPpVAUQxdn9K42kaAFBbMFbDiops"
+agent_staking = "FE5kcoY1CsnAFak5PBBUy689hRKvpE2261C1GaWSbJak"
+agent_platform = "3TNdmF3EC9yrJjm5fxfFrrBxur5ntiuoByCqYSgtrEbw"
+
+[registry]
+url = "https://api.apr.dev"
+
+[provider]
+cluster = "localnet"
+wallet = "~/.config/solana/id.json"
+
+[scripts]
+test = "TS_NODE_PROJECT=./tsconfig.json yarn run mocha --no-config --no-package -r ts-node/register/transpile-only -t 1000000 \"tests/**/*.ts\""
+
